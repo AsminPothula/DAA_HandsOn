@@ -18,7 +18,8 @@ Each of the sorts have -
 - image of the plot generated
 
 Additional files
-- benchmark/computer information (work done on GitHub Codespaces)
+- computer information (work done on GitHub Codespaces)
 - selection sort correctness
+- benchmark plot for the 3 sorting algorithms - python code and plot image
   
 </details>
