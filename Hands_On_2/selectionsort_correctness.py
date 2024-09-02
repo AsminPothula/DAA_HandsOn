@@ -22,3 +22,10 @@ if is_sorted(array):
     print("The array is sorted correctly:", array)
 else:
     print("The array is not sorted correctly:", array)
+
+#Output:
+#The array is sorted correctly: [8, 9, 11, 12, 13, 21, 22, 23, 25, 29, 36, 39, 40, 47, 50, 51, 57, 64, 65, 73, 77, 84, 88, 90, 96]
+
+#To check for the correctness of the sort, run the code as follows:
+#cd Hands_On_2
+#python selectionsort_correctness.py
