@@ -3,7 +3,7 @@ This repository contains the Hands On assignments for the course CSE 5311 (Desig
 
 ## Hands_On 2
 <details>
-<summary>Click to expand Hands_On 2 details</summary>
+<summary>Details about Hands On 2 assignment</summary>
 
 Direct Link to the folder - [`Hands_On_2`](Hands_On_2/)
   
