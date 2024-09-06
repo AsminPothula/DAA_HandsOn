@@ -48,5 +48,5 @@ Direct Link to the folder - [`Hands_On_3`](Hands_On_3/)
  
  
 Other files:
-- PDF containing the non-coding solutions to some of the questions: [`Hands_On_3_solutions.pdf`](Hands_On_3/Hands_On_3_solutions.pdf)
+- PDF containing the non-coding solutions to some of the questions: [`Hands_On_3_Solutions.pdf`](Hands_On_3/Hands_On_3_Solutions.pdf)
 </details>
