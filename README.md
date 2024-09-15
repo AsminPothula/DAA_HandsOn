@@ -55,6 +55,8 @@ Other files:
 <details>
 <summary>Details about Hands On 4 assignment</summary>
 
+Direct Link to the folder - [`Hands_On_4`](Hands_On_4/)
+
 Problem 0:
 - Fibonacci sequence python implementation: [`fibonacci_sequence.py`](Hands_On_4/fibonacci_sequence.py)
 - Output screenshot: [`fib_output.png`](Hands_On_4/fib_output.png)
