@@ -50,3 +50,23 @@ Direct Link to the folder - [`Hands_On_3`](Hands_On_3/)
 Other files:
 - PDF containing the non-coding solutions to some of the questions: [`Hands_On_3_Solutions.pdf`](Hands_On_3/Hands_On_3_Solutions.pdf)
 </details>
+
+## Hands_On 4
+<details>
+<summary>Details about Hands On 4 assignment</summary>
+
+Problem 0:
+- Fibonacci sequence python implementation: [`fibonacci_sequence.py`](Hands_On_4/fibonacci_sequence.py)
+- Output screenshot: [`fib_output.png`](Hands_On_4/fib_output.png)
+
+Problem 1:
+- Code: [`merge_arrays.py`](Hands_On_4/merge_arrays.py)
+- Output screenshot: [`merge_output.png`](Hands_On_4/merge_output.png)
+
+Problem 2:
+- Code: [`remove_duplicates.py`](Hands_On_4/remove_duplicates.py)
+- Output screenshot: [`remove_duplicates_output.png`](Hands_On_4/remove_duplicates_output.png)
+
+Solutions document for part 2 and 3 of Problems 1, 2: [`solutions.txt`](Hands_On_4/solutions.txt)
+
+</details>
