@@ -13,3 +13,8 @@ Problem 1:
    time complexity - O(NK log K). this would be more efficient for larger values of K. Parallelizating merging of 2
    arrays would also speed up the process. Like, pairs of arrays could be merged parallelly and then combiend together
    in the next step. 
+
+
+Problem 2:
+
+2. 
