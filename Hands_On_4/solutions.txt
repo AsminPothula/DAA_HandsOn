@@ -1,0 +1,15 @@
+Problem 1:
+
+2. Time Complexity:
+    Merging 2 arrays of sizes a and b takes O(a+b). if N = total number of elemets in both the arrays (N = a + b),
+    then it's O(N), this would be for the first merge. For the second merge, the time complexity would be O(2N), 
+    as the size of the combined arrays increases, so on so forth until K-1 merges, K being the total number of arrays. 
+    => T(N) = O(N) + O(2N) + O(3N) + O(4N) + ..... + O((K-1)N)
+    => T(N) = N(1+2+3+4...+K-1) = N((K-2)(K-1))/2 
+    => here, we ignore all the lower terms and only consider K^2 term 
+    => T(N) = O(N.K^2)
+
+3. After implementing this code, I relaized that a heap implementation would have been more efficient, in terms of
+   time complexity - O(NK log K). this would be more efficient for larger values of K. Parallelizating merging of 2
+   arrays would also speed up the process. Like, pairs of arrays could be merged parallelly and then combiend together
+   in the next step. 

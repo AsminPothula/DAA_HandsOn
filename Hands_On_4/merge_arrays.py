@@ -24,8 +24,7 @@ def merge_k_arrays(arrays):
     if not arrays:
         return []
     
-    merged_result = arrays[0]
-    
+    merged_result = arrays[0] 
     for i in range(1, len(arrays)):
         merged_result = merge_two_arrays(merged_result, arrays[i])
     
