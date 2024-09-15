@@ -17,4 +17,11 @@ Problem 1:
 
 Problem 2:
 
-2. 
+2. Time Complexity:
+   The loop iterates through the entire array N-1 times, N being the number of elements in the array. 
+   Inside the array, the only time the index gets updated is when a unique/new element is found, this is constant time. 
+   => total time complexity = O(N)
+
+3. Since the arrays are already sorted, binary search could be used to find the next unique element. 
+   By using multithreading, parts of the array can be proccessed simultaneously - 
+   this helps in reducing the time complexity, and is useful for larger values of N. 
