@@ -6,6 +6,7 @@ class BinaryHeap:
         self.cmp = cmp_func 
         print(f"Initialized heap with capacity {capacity}")
 
+    #parent, left, right - bit manipulation
     def parent(self, i):
         return (i - 1) >> 1
 
@@ -30,7 +31,6 @@ class BinaryHeap:
 
         if smallest != i:
             self.swap(i, smallest)
-            print(f"Heap after swapping index {i} with index {smallest}: {self.arr[:self.size]}")  # Print state after swap
             self.heapify(smallest)
 
     def build_min_heap(self, array):
@@ -68,5 +68,6 @@ if __name__ == "__main__":
 
     heap = BinaryHeap(len(array), int_compare)
     heap.build_min_heap(array)
+    
     min_value = heap.extract_min()
-    print(f"Final heap after extracting min: {heap.arr[:heap.size]}")
+    #print(f"Final heap after extracting min: {heap.arr[:heap.size]}")
