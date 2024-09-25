@@ -72,3 +72,14 @@ Problem 2:
 Solutions document for part 2 and 3 of Problems 1, 2: [`solutions.txt`](Hands_On_4/solutions.txt)
 
 </details>
+
+## Hands_On 5
+<details>
+<summary>Details about Hands On 4 assignment</summary>
+
+- Min heap python implementation meeting all the specified requirements:
+    [`min_heap.py`](Hands_On_5/min_heap.py)
+- Examples of heap working (screenshots):
+    [`detailed output`](Hands_On_5/detailedoutputexample.png) [`simplified output`](Hands_On_5/simplifiedoutputexample.png)
+
+</details>
