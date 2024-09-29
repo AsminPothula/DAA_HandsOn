@@ -75,11 +75,26 @@ Solutions document for part 2 and 3 of Problems 1, 2: [`solutions.txt`](Hands_On
 
 ## Hands_On 5
 <details>
-<summary>Details about Hands On 4 assignment</summary>
+<summary>Details about Hands On 5 assignment</summary>
 
 - Min heap python implementation meeting all the specified requirements:
     [`min_heap.py`](Hands_On_5/min_heap.py)
 - Examples of heap working (screenshots):
     [`detailed output`](Hands_On_5/detailedoutputexample.png) [`simplified output`](Hands_On_5/simplifiedoutputexample.png)
+
+</details>
+
+## Hands_On 6
+<details>
+<summary>Details about Hands On 6 assignment</summary>
+- Q1: 
+    Random version: [`quicksort_random.py`](Hands_On_6/quicksort_random.py)
+    Non - random version: [`quicksort_nonrandom.py`](Hands_On_6/quicksort_nonrandom.py)
+    Output: [`terminal_output_screenshot.png`](Hands_On_6/terminal_output_screenshot.png)
+- Q2:
+    Code: [`quicksort_nonrandom_benchmarks.py`](Hands_On_6/quicksort_nonrandom_benchmarks.py)
+    Output: [`quicksort_performance.png`](Hands_On_6/quicksort_performance.png)
+- Q3: 
+    [`Q3.pdf`](Hands_On_6/Q3.pdf)
 
 </details>
