@@ -25,6 +25,7 @@ void create()
 
 void start()
 {
+    printf("This program is set to take 5 students.\n\n");
     for (int i = 0; i < 5; i++)
     {
         create();
