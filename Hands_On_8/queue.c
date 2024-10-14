@@ -12,7 +12,7 @@ int isFull() {
     return ((rear + 1) % MAX == front); 
 }
 
-int insert() {
+int enqueue() {
     if (isFull()) {
         printf("Queue Overflow\n");
         return 0;
@@ -20,14 +20,14 @@ int insert() {
     if (isEmpty()) {
         front = 0; 
     }
-    rear = (rear + 1) % MAX; 
+    rear = (rear + 1) % MAX; // Circular increment
     printf("Enter the element to be inserted: ");
     scanf("%d", &queue[rear]);
     printf("Element inserted successfully\n");
     return 0;
 }
 
-int delete() {
+int dequeue() {
     if (isEmpty()) {
         printf("Queue Underflow\n");
         return 0;
@@ -62,16 +62,16 @@ int main(void) {
     int choice;
     while (1) {
         printf("\n\nQueue Menu:");
-        printf("\n1. Insert\n2. Delete\n3. Display\n4. Exit");
+        printf("\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit");
         printf("\nSelect Menu Option: ");
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
-                insert();
+                enqueue(); 
                 break;
             case 2:
-                delete();
+                dequeue();  
                 break;
             case 3:
                 display();
