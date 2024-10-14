@@ -16,17 +16,17 @@ def quicksort_i(arr, low, high, k):
     if low <= high:
         pi = partition(arr, low, high)
         
-        # If the pivot is the k-th smallest element
+        #if the pivot = k-th smallest element
         if pi == k:
             return arr[pi]
-        # If the k-th smallest is on the left side of the pivot
+        #if the k-th smallest is on the left side of the pivot
         elif pi > k:
             return quicksort_i(arr, low, pi - 1, k)
-        # If the k-th smallest is on the right side of the pivot
+        #if the k-th smallest is on the right side of the pivot
         else:
             return quicksort_i(arr, pi + 1, high, k)
     
-    return None  # Return None if k is out of bounds
+    return None 
 
 def main():
     n = int(input("Enter the number of elements: "))
