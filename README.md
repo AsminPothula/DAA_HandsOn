@@ -101,3 +101,21 @@ Solutions document for part 2 and 3 of Problems 1, 2: [`solutions.txt`](Hands_On
     - [`Q3.pdf`](Hands_On_6/Q3.pdf)
 
 </details>
+
+## Hands_On 8
+<details>
+<summary>Details about Hands On 8 assignment</summary>
+
+- Q1: 
+    - Implementation of quicksort w/ the ith order statistic: [`quicksort_i.py`](Hands_On_8/quicksort_i.py)
+    - Output (examples): [`output.png`](Hands_On_8/output.png)
+
+- Q2:
+    1. Stack: [`stack.c`](Hands_On_8/stack.c)
+        - Output: [`stack_output.mov`](Hands_On_8/stack_output.mov)
+    2. Queue: [`queue.c`](Hands_On_8/queue.c)
+        - Output: [`queue_output.mov`](Hands_On_8/queue_output.mov)
+    3. Linked List: [`linked_list.c`](Hands_On_8/linked_list.c)
+        - Output: [`linked_list_output.mov`](Hands_On_8/linked_list_output.mov)
+
+</details>
