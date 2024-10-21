@@ -119,3 +119,22 @@ Solutions document for part 2 and 3 of Problems 1, 2: [`solutions.txt`](Hands_On
         - Output: [`linked_list_output.mov`](Hands_On_8/linked_list_output.mov)
 
 </details>
+
+</details>
+
+## Hands_On 9
+<details>
+<summary>Details about Hands On 9 assignment</summary>
+
+- Hash Function: [`hash_function.c`](Hands_On_9/hash_function.c) [`hash_function.h`](Hands_On_9/hash_function.h)
+- Hash Table: [`hash_table.c`](Hands_On_9/hash_table.c) [`hash_table.h`](Hands_On_9/hash_table.h)
+    - The code allows for any hash function
+
+- Main Function: [`main.c`](Hands_On_9/main.c)
+
+- Output: [`output.txt`](Hands_On_9/output.txt)
+    - Example array with size within the specified range
+    - Example array for growing the hash table
+    - Example array for shrinking the hash table
+
+</details>
