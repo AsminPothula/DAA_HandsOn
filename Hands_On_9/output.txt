@@ -1,0 +1,462 @@
+General:
+
+Code:
+
+#in main.c
+HashTable* ht = create_hash_table(10, multiplication_division_hash);
+printf("Inserting keys: 5, 2, 15, 7, 20\n");
+    insert(ht, 5, 500);
+    insert(ht, 2, 200);
+    insert(ht, 15, 1500);
+    insert(ht, 7, 700);
+    insert(ht, 20, 2000);
+
+    print_hash_table(ht);
+
+    printf("\nDeleting key: 2\n");
+    delete(ht, 2);
+    print_hash_table(ht);
+
+    printf("\nInserting key: 25\n");
+    insert(ht, 25, 2500);
+    print_hash_table(ht);
+
+    int value;
+    if (search(ht, 15, &value)) {
+        printf("\nValue for key 15: %d\n", value);
+    }
+
+    printf("\nDeleting keys: 5, 15\n");
+    delete(ht, 5);
+    delete(ht, 15);
+    print_hash_table(ht);
+
+    destroy_hash_table(ht);
+
+Output:
+
+@AsminPothula ➜ /workspaces/DAA_HandsOn/Hands_On_9 (main) $ gcc -o hash_program main.c hash_function.c hash_table.c
+@AsminPothula ➜ /workspaces/DAA_HandsOn/Hands_On_9 (main) $ ./hash_program
+Inserting keys: 5, 2, 15, 7, 20
+Hash Table Contents:
+Bucket 0: (5, 500) 
+Bucket 1: 
+Bucket 2: (15, 1500) (2, 200) 
+Bucket 3: (20, 2000) (7, 700) 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: 
+Bucket 9: 
+Total items: 5
+
+Deleting key: 2
+Hash Table Contents:
+Bucket 0: (5, 500) 
+Bucket 1: 
+Bucket 2: (15, 1500) 
+Bucket 3: (20, 2000) (7, 700) 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: 
+Bucket 9: 
+Total items: 4
+
+Inserting key: 25
+Hash Table Contents:
+Bucket 0: (5, 500) 
+Bucket 1: 
+Bucket 2: (15, 1500) 
+Bucket 3: (20, 2000) (7, 700) 
+Bucket 4: (25, 2500) 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: 
+Bucket 9: 
+Total items: 5
+
+Value for key 15: 1500
+
+Deleting keys: 5, 15
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: 
+Bucket 2: 
+Bucket 3: (20, 2000) (7, 700) 
+Bucket 4: (25, 2500) 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: 
+Bucket 9: 
+Total items: 3
+
+
+
+
+
+
+
+Growing the Hash Table:
+
+Code:
+
+#in main.c
+    HashTable* ht = create_hash_table(4, multiplication_division_hash);
+
+    printf("Inserting keys to force growth:\n");
+    int keys[] = {5, 2, 15, 7, 20, 9, 14, 30, 17, 22};
+    
+    for (int i = 0; i < 10; i++) {
+        printf("Inserting key %d\n", keys[i]);
+        insert(ht, keys[i], keys[i] * 100);
+        print_hash_table(ht);
+        printf("\n");
+    }
+
+Output:
+
+@AsminPothula ➜ /workspaces/DAA_HandsOn/Hands_On_9 (main) $ gcc -o hash_program main.c hash_function.c hash_table.c
+@AsminPothula ➜ /workspaces/DAA_HandsOn/Hands_On_9 (main) $ ./hash_program
+Inserting keys to force growth:
+Inserting key 5
+Hash Table Contents:
+Bucket 0: (5, 500) 
+Bucket 1: 
+Bucket 2: 
+Bucket 3: 
+Total items: 1
+
+Inserting key 2
+Hash Table Contents:
+Bucket 0: (2, 200) (5, 500) 
+Bucket 1: 
+Bucket 2: 
+Bucket 3: 
+Total items: 2
+
+Inserting key 15
+Hash Table Contents:
+Bucket 0: (2, 200) (5, 500) 
+Bucket 1: (15, 1500) 
+Bucket 2: 
+Bucket 3: 
+Total items: 3
+
+Inserting key 7
+Hash Table Contents:
+Bucket 0: (2, 200) (5, 500) 
+Bucket 1: (7, 700) (15, 1500) 
+Bucket 2: 
+Bucket 3: 
+Total items: 4
+
+Inserting key 20
+Hash Table Contents:
+Bucket 0: (5, 500) 
+Bucket 1: (2, 200) 
+Bucket 2: (20, 2000) (15, 1500) (7, 700) 
+Bucket 3: 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Total items: 5
+
+Inserting key 9
+Hash Table Contents:
+Bucket 0: (5, 500) 
+Bucket 1: (2, 200) 
+Bucket 2: (20, 2000) (15, 1500) (7, 700) 
+Bucket 3: 
+Bucket 4: (9, 900) 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Total items: 6
+
+Inserting key 14
+Hash Table Contents:
+Bucket 0: (5, 500) 
+Bucket 1: (2, 200) 
+Bucket 2: (20, 2000) (15, 1500) (7, 700) 
+Bucket 3: 
+Bucket 4: (9, 900) 
+Bucket 5: (14, 1400) 
+Bucket 6: 
+Bucket 7: 
+Total items: 7
+
+Inserting key 30
+Hash Table Contents:
+Bucket 0: (5, 500) 
+Bucket 1: (2, 200) 
+Bucket 2: (20, 2000) (15, 1500) (7, 700) 
+Bucket 3: 
+Bucket 4: (30, 3000) (9, 900) 
+Bucket 5: (14, 1400) 
+Bucket 6: 
+Bucket 7: 
+Total items: 8
+
+Inserting key 17
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (5, 500) 
+Bucket 2: 
+Bucket 3: (2, 200) 
+Bucket 4: (15, 1500) 
+Bucket 5: (7, 700) (20, 2000) 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (9, 900) (30, 3000) 
+Bucket 9: 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 9
+
+Inserting key 22
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (5, 500) 
+Bucket 2: 
+Bucket 3: (2, 200) 
+Bucket 4: (15, 1500) 
+Bucket 5: (7, 700) (20, 2000) 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (9, 900) (30, 3000) 
+Bucket 9: (22, 2200) 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 10
+
+
+
+
+
+
+Shrinking the Hash Table:
+
+Code:
+
+#in main.c
+HashTable* ht = create_hash_table(16, multiplication_division_hash); // Start with size 16
+
+printf("Inserting initial keys:\n");
+int keys[] = {5, 2, 15, 7, 20, 9, 14, 30, 17, 22, 11, 26};
+for (int i = 0; i < 12; i++) {
+    insert(ht, keys[i], keys[i] * 100);
+}
+print_hash_table(ht);
+printf("\n");
+
+printf("Deleting keys to force shrinkage:\n");
+int delete_keys[] = {5, 2, 15, 7, 20, 9, 14, 30, 17};
+for (int i = 0; i < 9; i++) {
+    printf("Deleting key %d\n", delete_keys[i]);
+    delete(ht, delete_keys[i]);
+    print_hash_table(ht);
+    printf("\n");
+}
+
+Output:
+
+@AsminPothula ➜ /workspaces/DAA_HandsOn/Hands_On_9 (main) $ gcc -o hash_program main.c hash_function.c hash_table.c
+@AsminPothula ➜ /workspaces/DAA_HandsOn/Hands_On_9 (main) $ ./hash_program
+Inserting initial keys:
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (26, 2600) (5, 500) 
+Bucket 2: 
+Bucket 3: (2, 200) 
+Bucket 4: (15, 1500) 
+Bucket 5: (20, 2000) (7, 700) 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (30, 3000) (9, 900) 
+Bucket 9: (22, 2200) 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: (11, 1100) 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 12
+
+Deleting keys to force shrinkage:
+Deleting key 5
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (26, 2600) 
+Bucket 2: 
+Bucket 3: (2, 200) 
+Bucket 4: (15, 1500) 
+Bucket 5: (20, 2000) (7, 700) 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (30, 3000) (9, 900) 
+Bucket 9: (22, 2200) 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: (11, 1100) 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 11
+
+Deleting key 2
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (26, 2600) 
+Bucket 2: 
+Bucket 3: 
+Bucket 4: (15, 1500) 
+Bucket 5: (20, 2000) (7, 700) 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (30, 3000) (9, 900) 
+Bucket 9: (22, 2200) 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: (11, 1100) 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 10
+
+Deleting key 15
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (26, 2600) 
+Bucket 2: 
+Bucket 3: 
+Bucket 4: 
+Bucket 5: (20, 2000) (7, 700) 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (30, 3000) (9, 900) 
+Bucket 9: (22, 2200) 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: (11, 1100) 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 9
+
+Deleting key 7
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (26, 2600) 
+Bucket 2: 
+Bucket 3: 
+Bucket 4: 
+Bucket 5: (20, 2000) 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (30, 3000) (9, 900) 
+Bucket 9: (22, 2200) 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: (11, 1100) 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 8
+
+Deleting key 20
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (26, 2600) 
+Bucket 2: 
+Bucket 3: 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (30, 3000) (9, 900) 
+Bucket 9: (22, 2200) 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: (11, 1100) 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 7
+
+Deleting key 9
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (26, 2600) 
+Bucket 2: 
+Bucket 3: 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (30, 3000) 
+Bucket 9: (22, 2200) 
+Bucket 10: (14, 1400) 
+Bucket 11: 
+Bucket 12: (11, 1100) 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 6
+
+Deleting key 14
+Hash Table Contents:
+Bucket 0: 
+Bucket 1: (26, 2600) 
+Bucket 2: 
+Bucket 3: 
+Bucket 4: 
+Bucket 5: 
+Bucket 6: 
+Bucket 7: 
+Bucket 8: (17, 1700) (30, 3000) 
+Bucket 9: (22, 2200) 
+Bucket 10: 
+Bucket 11: 
+Bucket 12: (11, 1100) 
+Bucket 13: 
+Bucket 14: 
+Bucket 15: 
+Total items: 5
+
+Deleting key 30
+Hash Table Contents:
+Bucket 0: (26, 2600) 
+Bucket 1: 
+Bucket 2: 
+Bucket 3: 
+Bucket 4: (22, 2200) (17, 1700) 
+Bucket 5: 
+Bucket 6: (11, 1100) 
+Bucket 7: 
+Total items: 4
+
+Deleting key 17
+Hash Table Contents:
+Bucket 0: (26, 2600) 
+Bucket 1: 
+Bucket 2: 
+Bucket 3: 
+Bucket 4: (22, 2200) 
+Bucket 5: 
+Bucket 6: (11, 1100) 
+Bucket 7: 
+Total items: 3
