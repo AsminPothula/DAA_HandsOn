@@ -138,3 +138,19 @@ Solutions document for part 2 and 3 of Problems 1, 2: [`solutions.txt`](Hands_On
     - Example array for shrinking the hash table
 
 </details>
+
+## Hands_On 10
+<details>
+<summary>Details about Hands On 10 assignment</summary>
+
+1. Binary Search Tree
+    - Code: [`bst.c`](Hands_On_10/bst.c)
+    - Output: [`bst_output.mov`](Hands_On_10/bst_output.mov)
+2. AVL Tree
+    - Code: [`avl.c`](Hands_On_10/avl.c)
+    - Output: [`avl_output.mov`](Hands_On_10/avl_output.mov)
+3. Red Black Tree
+    - Code: [`rb.c`](Hands_On_10/rb.c)
+    - Output: [`red_black_output.mov`](Hands_On_10/red_black_output.mov)
+
+</details>
