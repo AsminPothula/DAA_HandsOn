@@ -1,0 +1,34 @@
+Chapter 17 Homework
+
+Q1:
+a) Aggregate Method:
+   Calculate the total cost of all insertions and then divide it by the number of operations to find the amortized cost.
+
+   1. Insert n elements into a dynamic table that starts with a capacity of 1 and doubles each time it runs out of space.
+   2. The table resizes when the number of elements reaches capacities (1, 2, 4, 8, ....., 2^i) until 2^i >= n. 
+   3. The cost of each resize is the number of elements copied => 1 + 2 + 4 + 8 +......+ 2^i.
+   4. The total cost of all resizes is a geometric series. 
+        => ∑ (j=0 to i) 2^j = 2^(i+1) - 1
+        Since, 2^i is approximately n, 
+        => 2^(i+1) is approximately 2n. 
+        => Thus, the total cost of resizing is O(n).
+   5. The total cost of all n insertions (including both regular and resizing operations) is O(n).
+        Amortized Cost per insertion = O(n)/n = O(1)
+
+
+b) Accounting Method:
+   Assign an amortized cost to each insertion operation and use a credit system to pay for expensive resizing operations.
+
+   1. Assign an amortized cost of 3 units to each insertion.
+   2. Cost Breakdown - 
+        - A regular insertion takes 1 unit, leaving 2 units as credit.
+        - This credit is used to pay for future resizing operations.
+   3. Resizing Cost:
+        - When resizing from capacity k to 2k, k elements are copied, costing k units.
+        - The previous k insertions contributed 2 units each, for a total of 2k units of credit.
+   4. Credit Sufficiency:
+        => Total credit = 2k units, which covers the k units needed for resizing. 
+   5. Amortized Cost: 
+        => We distribute the cost of expensive resizing operations over multiple cheap insertion operations.
+        => Each insertion contributes a constant amount of credit, which is efficiently used to handle the occasional expensive operation.
+        => The amortized cost per insertion remains O(1).

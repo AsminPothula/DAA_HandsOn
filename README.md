@@ -154,3 +154,16 @@ Solutions document for part 2 and 3 of Problems 1, 2: [`solutions.txt`](Hands_On
     - Output: [`red_black_output.mov`](Hands_On_10/red_black_output.mov)
 
 </details>
+
+## Hands_On 11
+<details>
+<summary>Details about Hands On 11 assignment</summary>
+
+1. Dynamic Array Implemtation:
+    - Code: [`main.cpp`](Hands_On_11/main.cpp)
+    - Output: [`main_output.png`](Hands_On_11/main_output.png)
+2. Chapter 17 Homework:
+    - Solution: [`chap17.txt`](Hands_On_11/chap17.txt)
+
+
+</details>
