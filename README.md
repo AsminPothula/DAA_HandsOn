@@ -167,3 +167,14 @@ Solutions document for part 2 and 3 of Problems 1, 2: [`solutions.txt`](Hands_On
 
 
 </details>
+
+## Hands_On 13
+<details>
+<summary>Details about Hands On 13 assignment</summary>
+
+1. Topological Sort: [`topological_sort.py`](Hands_On_13/topological_sort.py)
+2. Depth First Search: [`dfs.py`](Hands_On_13/dfs.py)
+3. Kruskal Algorithm: [`kruskal.py`](Hands_On_13/kruskal.py)
+
+
+</details>
